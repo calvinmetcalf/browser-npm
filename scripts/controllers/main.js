@@ -13,7 +13,7 @@ angular.module('browserNpmApp')
 
     var dirty = false;
     var startkey;
-    var pouch = new PouchDB('npm');
+    var pouch = new PouchDB('registry');
     var remotePouch = new PouchDB($scope.couchdbUrl);
 
     function fetchDocCount() {
