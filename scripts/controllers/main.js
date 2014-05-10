@@ -5,7 +5,7 @@ angular.module('browserNpmApp')
 
     var PAGE_SIZE = 10;
 
-    $scope.couchdbUrl = 'http://nolan.iriscouch.com/skimdb/';
+    $scope.couchdbUrl = location.protocol+ '//' +location.host + '/' + location.pathname.split('/')[1];
     $scope.docCount = 0;
     $scope.remoteDocCount = 0;
     $scope.page = [];
@@ -13,7 +13,7 @@ angular.module('browserNpmApp')
 
     var dirty = false;
     var startkey;
-    var pouch = new PouchDB('registry');
+    var pouch = new PouchDB('npm');
     var remotePouch = new PouchDB($scope.couchdbUrl);
 
     function fetchDocCount() {
